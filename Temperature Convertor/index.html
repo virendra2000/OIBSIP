@@ -4,8 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temperature Convertor</title>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="index.js"></script>
 </head>
-<body>
-    
+<body onload="changetype()">
+    <div class="container">
+        <div class="logo">
+            <img src="images/favicon.png" width="250px" height="160px">
+            <h1>Temperature Convertor</h1>
+        </div>
+        <div class="convertor-container">
+            <div class="convertbox">
+                <form class="form1">
+                    <div class="block">
+                        <label for="type">Temperature Type</label><br>
+                        <select id="temperature" onchange="changetype()">
+                            <option value="To Celcius">To Celcius</option>
+                            <option value="To Fahrenheit">To Fahrenheit</option>
+                            </select>
+                    </div>
+                    <div class="block">
+                        <label for="celcius">Enter Value <span id="selecttype"></span></label><br>
+                        <input type="number" placeholder="0" id="temp" oninput="convert()" pattern="[0-9]" title="Only Number is Accepted">
+                    </div>
+                    <button type="button" onclick="convert()">Convert</button>
+                    <div class="block">
+                        <label for="result">Result</label><br><br>
+                        <span id="result">No Result Till Now</span><br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function changetype() {
+            var gettype = document.getElementById('temperature').value;
+            if(gettype == "To Celcius") {
+                document.getElementById('selecttype').innerHTML = "(In Fahrenheit)";
+            }
+            else if(gettype == "To Fahrenheit") {
+                document.getElementById('selecttype').innerHTML = "(In Celcius)";
+            }
+            else {
+                document.getElementById('selecttype').innerHTML = "(In Fahrenheit)";
+            }
+        }
+        function convert() {
+            var gettype = document.getElementById('temperature').value;
+            if(gettype == "To Celcius") {
+                var f = parseFloat(document.getElementById('temp').value);
+                if(f!="") {
+                    document.getElementById('result').innerHTML = Math.round((f-32)*5/9)+"℃";
+                }
+                else {
+                    document.getElementById('result').innerHTML = "No Result Till Now";
+                }
+            }
+            if(gettype == "To Fahrenheit"){
+                var c = parseFloat(document.getElementById('temp').value);
+                if(c!=""){
+                    document.getElementById('result').innerHTML = Math.round((c*9/5)+32)+"℉";
+                }
+                else {
+                    document.getElementById('result').innerHTML = "No Result Till Now";
+                }
+            }
+        }
+    </script>
 </body>
 </html>

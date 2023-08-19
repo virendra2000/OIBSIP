@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+:root {
+    --bg-color : linear-gradient(25deg, #f36a62, #e89672, #d8bb82, #c0de93);
+    --main-bg-color: #fff;
+    --text-main-color: #000; 
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: var(--bg-color);
+    height: 100vh;
+    background-size: cover;
+    color: var(--text-main-color);
+}
+.container {
+    max-width: 500px;
+    margin: auto;
+}
+.container .logo {
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #fff;
+}
+.convertor-container {
+    margin: 10px;
+}
+.convertor-container .convertbox {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 0 0 20px #fff;
+}
+.convertor-container .convertbox .form1 label , #result{
+    margin: 5px;
+    padding: 10px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.convertor-container .convertbox .form1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+.convertor-container .convertbox .form1 #temperature ,#temp{
+    margin: 15px;
+    padding: 10px;
+    font-weight: 600;
+    outline: none;
+    border: 0px;
+    border-bottom: 2px solid #ff4500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.convertor-container .convertbox .form1 button{
+    margin: 15px;
+    padding: 15px;
+    font-weight: bold;
+    width: 100%;
+    color: #fff;
+    border: 0px;
+    border-radius: 28px;
+    cursor: pointer;
+    background: var(--bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.convertor-container .convertbox .form1 button:hover{
+    border: 2px solid #ff4500;
+    background: transparent;
+    color: #ff4500;
+}
